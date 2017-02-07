@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="generic" class="fakeburst.Mage">
+        <constructor-arg ref="priest"/>
+        <!--<property name="type" ref="priest"></property>-->
+        <property name="spells">
+            <list>
+                <ref bean="fireball"></ref>
+                <ref bean="frostnova"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="priest" class="fakeburst.Priest"></bean>
+    <bean id="fireball" class="fakeburst.Fireball"></bean>
+    <bean id="frostnova" class="fakeburst.FrostNova"></bean>
+    <bean id="hex" class="fakeburst.Hex"></bean>
+</beans>
