@@ -1,13 +1,21 @@
 package fakeburst;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 /**
  * Created by Max on 07-Feb-17.
  */
-public class Mage {
 
+@Component("Mage")
+public class Mage {
+    @Autowired
+    @Qualifier("Priest")
     private MageType type;
+    
     private List<Spell> spells;
 
     public Mage(){};
@@ -29,6 +37,7 @@ public class Mage {
         this.type = type;
     }
 
+    @Autowired
     public void setSpells(List<Spell> spells) {
         this.spells = spells;
     }
